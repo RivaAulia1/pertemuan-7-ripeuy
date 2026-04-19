@@ -1,0 +1,43 @@
+def menu():
+    print("\n=== MENU ===")
+    print("1. A pangkat B")
+    print("2. Hitung Fibonacci")
+    print("0. Keluar")
+
+
+def pangkat():
+    a = int(input("Masukkan suatu bilangan bulat: "))
+    b = int(input("Masukkan pangkat yang diinginkan: "))
+
+    for i in range(1, b + 1):
+        hasil = a ** i
+        print(f"Hasil {a} pangkat {i} adalah {hasil}")
+
+
+def deret():
+    n = int(input("Masukkan jumlah N: "))
+
+    a, b = 1, 2
+    total = 0
+
+    for i in range(n):
+        total += a / b
+        a, b = b, a + b
+
+    print("Hasil deret:", total)
+
+
+# MAIN PROGRAM (while dipisah di bawah)
+while True:
+    menu()
+    pilihan = int(input("Masukkan pilihan: "))
+
+    if pilihan == 1:
+        pangkat()
+    elif pilihan == 2:
+        deret()
+    elif pilihan == 0:
+        print("Program selesai.")
+        break
+    else:
+        print("Pilihan tidak valid!")
